@@ -114,6 +114,26 @@ sudo bench setup production frappe
 
 sudo supervisorctl restart all
 
+# Install typical external App
+
+bench get-app --branch production-v15 https://github.com/sihaysistema/factura_electronica_gt.git --resolve-deps
+
+bench --site next.lan install-app factura_electronica
+
+bench setup requirements
+
+bench update --patch
+
+bench build --app factura_electronica
+
+bench --site next.lan migrate
+
+bench restart && bench clear-cache
+
+bench build --app factura_electronica --production
+
+# End Install
+
 
 
 sudo snap install--classic certbot

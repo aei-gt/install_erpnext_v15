@@ -19,14 +19,21 @@ sudo apt-get install mariadb-server mariadb-client -y
 sudo mysql_secure_installation
 sudo service mysql restart
 sudo mysql -u root -p
+
 # Inside MySQL
+
 use mysql;
+
 UPDATE user SET plugin='mysql_native_password' WHERE user='root';
+
 FLUSH PRIVILEGES;
+
 EXIT;
+
 # Exit MySQL
 
 sudo nano /etc/mysql/my.cnf
+
 # Inside end editor my.cnf
 
 [mysqld]

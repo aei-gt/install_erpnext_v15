@@ -51,11 +51,15 @@ default-character-set = utf8mb4
 # End editor
 
 sudo service mysql restart
+
 sudo apt-get install redis-server
+
 sudo apt-get install curl
 
 curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
 sudo apt-get install -y nodejs
+
 sudo npm install -g yarn
 
 sudo apt-get install xvfb libfontconfig wkhtmltopdf
@@ -65,6 +69,7 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev li
 curl https://pyenv.run | bash
 
 nano ~/.bashrc
+
 # Inside file
 
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -80,25 +85,26 @@ source ~/.bashrc
 pyenv install 3.11.9
 
 sudo pip3 install frappe-bench
+
 bench init frappe-bench --frappe-branch version-15 --python ~/.pyenv/versions/3.11.9/bin/python
 
 cd frappe-bench/
+
 bench new-site next.lan
 
 bench get-app erpnext --branch version-15
+
 bench get-app hrms --branch version-15
+
 bench --site next.lan install-app erpnext
+
 bench --site next.lan install-app hrms
 
 bench setup nginx
 
 sudo bench setup production frappe
 
-
 sudo supervisorctl restart all
-
-
-
 
 
 

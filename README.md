@@ -25,12 +25,19 @@ EXIT;
 
 sudo nano /etc/mysql/my.cnf
 # Inside end editor my.cnf
+
 [mysqld]
-	character-set-client-handshake = FALSE
-	character-set-server = utf8mb4
-	collation-server = utf8mb4_unicode_ci
+
+character-set-client-handshake = FALSE
+
+character-set-server = utf8mb4
+
+collation-server = utf8mb4_unicode_ci
+
 [mysql]
-	default-character-set = utf8mb4
+
+default-character-set = utf8mb4
+
 # End editor
 
 sudo service mysql restart
@@ -49,10 +56,15 @@ curl https://pyenv.run | bash
 
 nano ~/.bashrc
 # Inside file
+
 export PATH="$HOME/.pyenv/bin:$PATH"
+
 eval "$(pyenv init -)"
+
 eval "$(pyenv virtualenv-init -)"
+
 # End file
+
 source ~/.bashrc
 
 pyenv install 3.11.9

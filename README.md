@@ -7,17 +7,25 @@ sudo usermod -aG sudo frappe
 su frappe
 
 nano ~/.bashrc
+
 # Add end of file
+
 PATH=$PATH:~/.local/bin/
+
 # Finish end of file
 
 source ~/.bashrc
 
 sudo apt-get install git
+
 sudo apt-get install libffi-dev python3-pip python3-dev python3-testresources libssl-dev wkhtmltopdf gcc g++ make -y
+
 sudo apt-get install mariadb-server mariadb-client -y
+
 sudo mysql_secure_installation
+
 sudo service mysql restart
+
 sudo mysql -u root -p
 
 # Inside MySQL

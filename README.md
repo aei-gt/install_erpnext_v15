@@ -1,6 +1,9 @@
 sudo useradd -m -s /bin/bash frappe
+
 sudo passwd frappe
+
 sudo usermod -aG sudo frappe
+
 su frappe
 
 nano ~/.bashrc

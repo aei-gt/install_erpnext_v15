@@ -86,7 +86,7 @@ eval "$(pyenv init -)"
 
 eval "$(pyenv virtualenv-init -)"
 
-# End file
+# End file - Need reboot and login with user like frappe
 
 source ~/.bashrc
 

@@ -139,3 +139,33 @@ bench build --app factura_electronica --production
 sudo snap install--classic certbot
 sudo ln-s /snap/bin/certbot /usr/bin/certbot
 sudo certbot–nginx
+
+
+# Installing the pyodbc (Not Working Now).
+
+source env/bin/activate
+
+pip install pyodbc
+
+sudo apt-get install unixodbc-dev
+
+pip show pyodbc
+
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/$(lsb_release-rs)/prod.list)"
+
+sudo apt-get update
+ 
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+
+source ~/.bashr
+
+sudo ACCEPT_EULA=Y apt-get install-y msodbcsql17
+
+sudo apt-get install mssql-tools unixodbc-de
+
+odbcinst-q-d
+
+odbcinst-j
+
